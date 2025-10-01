@@ -1,0 +1,8 @@
+from valores import Session
+from manuela import Venda
+
+with Session() as session:
+    loja_venda = Venda(carro="Jepp Compass", valor="250000.00", comissao="15000.00")
+    session.add(loja_venda)
+    session.commit()
+    print("Venda inserida com sucesso!")
